@@ -1,1 +1,4 @@
-<markdown-viewer [viewer]="content"></markdown-viewer>
+<div class="home" [formGroup]="form">
+  <textarea formControlName="content"></textarea>
+  <markdown-viewer [viewer]="form.controls['content'].value"></markdown-viewer>
+</div>

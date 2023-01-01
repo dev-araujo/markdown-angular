@@ -1,16 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
-  content = `
-  Angular Markdown
-  ----
-  is easy to display \`console.log('foo');\`
-  
-  this sample is for [stackoverflow question](https://stackoverflow.com/questions/50285467/markdown-editor-in-angular-4) !
-  `;
+export class AppComponent implements OnInit {
+  form!: FormGroup;
+
+  constructor(private formBuilder: FormBuilder) {
+    this.form = this.formBuilder.group({
+      content: [''],
+    });
+  }
+
+  ngOnInit() {}
 }
