@@ -1,4 +1,12 @@
-<div class="home" [formGroup]="form">
-  <textarea formControlName="content"></textarea>
-  <markdown-viewer [viewer]="form.controls['content'].value"></markdown-viewer>
+<div class="editor" [formGroup]="form">
+  <nav>
+    <i class="bi bi-clipboard"></i>
+    <i class="bi bi-file-arrow-down"></i>
+    <i class="bi bi-trash3"></i>
+  </nav>
+  <textarea class="editor__md" formControlName="content"></textarea>
+  <markdown-viewer
+    class="editor__view"
+    [viewer]="form.controls['content'].value"
+  ></markdown-viewer>
 </div>
