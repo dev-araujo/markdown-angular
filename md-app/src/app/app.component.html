@@ -1,5 +1,5 @@
 <div class="editor" [formGroup]="form">
-  <options></options>
+  <options [clipboard]="form.controls['content'].value"></options>
   <textarea class="editor__md" formControlName="content"></textarea>
   <markdown-viewer
     class="editor__view"

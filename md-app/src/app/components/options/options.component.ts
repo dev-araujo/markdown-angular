@@ -6,5 +6,14 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./options.component.scss'],
 })
 export class OptionsComponent {
-  @Input() viewer: string | any;
+  dynamicClass = 'bi bi-clipboard';
+  transictionTime = 2000;
+  @Input() clipboard: string | any;
+
+  clipMarkdown() {
+    this.dynamicClass = 'bi bi-clipboard-check';
+    setTimeout(() => {
+      this.dynamicClass = 'bi bi-clipboard';
+    }, this.transictionTime);
+  }
 }

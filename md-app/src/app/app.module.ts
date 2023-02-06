@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { MarkdownViewerComponent } from './components/markdown-viewer/markdown-viewer.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LMarkdownEditorModule } from 'ngx-markdown-editor';
 import { OptionsComponent } from './components/options/options.component';
+import { MarkdownViewerComponent } from './components/markdown-viewer/markdown-viewer.component';
+
+import { LMarkdownEditorModule } from 'ngx-markdown-editor';
+import { ClipboardModule } from '@angular/cdk/clipboard';
 
 @NgModule({
   declarations: [AppComponent, MarkdownViewerComponent, OptionsComponent],
@@ -14,6 +16,7 @@ import { OptionsComponent } from './components/options/options.component';
     FormsModule,
     LMarkdownEditorModule,
     ReactiveFormsModule,
+    ClipboardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
