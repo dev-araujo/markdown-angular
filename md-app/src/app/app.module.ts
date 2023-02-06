@@ -8,6 +8,7 @@ import { MarkdownViewerComponent } from './components/markdown-viewer/markdown-v
 
 import { LMarkdownEditorModule } from 'ngx-markdown-editor';
 import { ClipboardModule } from '@angular/cdk/clipboard';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [AppComponent, MarkdownViewerComponent, OptionsComponent],
@@ -17,6 +18,7 @@ import { ClipboardModule } from '@angular/cdk/clipboard';
     LMarkdownEditorModule,
     ReactiveFormsModule,
     ClipboardModule,
+    MatTooltipModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

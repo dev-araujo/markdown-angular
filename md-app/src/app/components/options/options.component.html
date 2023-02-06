@@ -3,7 +3,17 @@
     (click)="clipMarkdown()"
     [class]="dynamicClass"
     [cdkCopyToClipboard]="clipboard"
+    matTooltip="copiar"
+    matTooltipPosition="after"
   ></i>
-  <i class="bi bi-file-arrow-down"></i>
-  <i class="bi bi-trash3"></i>
+  <i
+    class="bi bi-file-arrow-down"
+    matTooltip="baixar"
+    matTooltipPosition="after"
+  ></i>
+  <i
+    class="bi bi-trash3"
+    matTooltip="apagar tudo"
+    matTooltipPosition="after"
+  ></i>
 </nav>
