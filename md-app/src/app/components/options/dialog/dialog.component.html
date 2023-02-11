@@ -1,0 +1,13 @@
+<section>
+  <header mat-dialog-title>
+    <p>Excluir</p>
+    <i (click)="onNoClick()" class="bi bi-x"></i>
+  </header>
+  <p mat-dialog-content>Você deseja realmente excluir o contéudo?</p>
+  <footer>
+    <button mat-raised-button (click)="onNoClick()">Não</button>
+    <button mat-raised-button color="warn" (click)="deleteContent()">
+      Sim
+    </button>
+  </footer>
+</section>
