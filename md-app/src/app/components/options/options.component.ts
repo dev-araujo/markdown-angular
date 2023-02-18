@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from './dialog/dialog.component';
 
@@ -11,6 +11,7 @@ export class OptionsComponent {
   dynamicClass = 'bi bi-clipboard';
   transictionTime = 2000;
   @Input() clipboard: string | any;
+  @Output() delete = new EventEmitter()
 
   constructor(public dialog: MatDialog) {}
 
@@ -25,11 +26,10 @@ export class OptionsComponent {
     const dialogRef = this.dialog.open(DialogComponent, {
       height: '200px',
       width: '400px',
-      data: { name: 'works' },
     });
 
     dialogRef.afterClosed().subscribe((res: string) => {
-      console.log(res);
+      this.delete.emit('works')
     });
   }
 }

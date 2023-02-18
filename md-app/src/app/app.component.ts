@@ -15,5 +15,9 @@ export class AppComponent implements OnInit {
     });
   }
 
+  delete(event:boolean):void{
+     if(event) this.form.controls['content'].setValue('')
+  }
+
   ngOnInit() {}
 }
