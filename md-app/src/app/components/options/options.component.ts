@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { DialogComponent } from './dialog/dialog.component';
 
 @Component({
@@ -12,14 +13,28 @@ export class OptionsComponent {
   transictionTime = 2000;
   @Input() clipboard: string | any;
   @Output() delete = new EventEmitter()
+  @Output() downloadText = new EventEmitter()
 
-  constructor(public dialog: MatDialog) {}
+
+  constructor(public dialog: MatDialog, private _snackBar: MatSnackBar) { }
 
   clipMarkdown() {
-    this.dynamicClass = 'bi bi-clipboard-check';
-    setTimeout(() => {
-      this.dynamicClass = 'bi bi-clipboard';
-    }, this.transictionTime);
+    if (this.clipboard?.length > 0) {
+      this.dynamicClass = 'bi bi-clipboard-check';
+      setTimeout(() => {
+        this.dynamicClass = 'bi bi-clipboard';
+      }, this.transictionTime);
+
+      this._snackBar.open('Texto copiado com SUCESSO!', '🎉', {
+        duration: this.transictionTime,
+        horizontalPosition: 'start',
+        verticalPosition: 'top',
+      })
+    }
+  }
+
+  download(){
+    this.downloadText.emit(true)
   }
 
   openDialog(): void {
@@ -29,7 +44,7 @@ export class OptionsComponent {
     });
 
     dialogRef.afterClosed().subscribe((res: string) => {
-      this.delete.emit('works')
+      this.delete.emit(true)
     });
   }
 }
