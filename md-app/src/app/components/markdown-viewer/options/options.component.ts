@@ -18,16 +18,14 @@ export class OptionsComponent {
 
   constructor(
     public dialog: MatDialog,
-    private _snackBar: MatSnackBar,
+    private snackBar: MatSnackBar,
     private clipboard: Clipboard
   ) {}
 
   clipMarkdown() {
+    this.snackBar.open('Texto copiado com sucesso!', '✅');
     this.dynamicClass = 'bi bi-clipboard-check';
     this.clipboard.copy(this.copyText);
-    this._snackBar.open('Texto copiado com sucesso!', '✅', {
-      duration: this.transictionTime,
-    });
   }
 
   openDialog(): void {
