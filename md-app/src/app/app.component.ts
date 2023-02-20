@@ -9,10 +9,17 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 export class AppComponent implements OnInit {
   form!: FormGroup;
+  initial=`#  Markdown previewer
+
+  ![](https://www.pixelstalk.net/wp-content/uploads/images6/Aesthetic-Wallpaper-Anime-Wallpaper-Bedroom.jpg)
+
+   Esse é um dos desafios  do bootcamp *Front End Development Libraries*  do [FreeCodeCamp](https://www.freecodecamp.org/) 
+   
+   Você pode digitar texto em formato **markdown** ou <strong>HTML</strong>`
 
   constructor(private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({
-      content: [''],
+      content: [this.initial],
     });
   }
 
