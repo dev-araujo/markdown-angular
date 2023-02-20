@@ -27,6 +27,7 @@ Esse é um dos testes finais do curso de **Front End Development Libraries** do 
 - Sass
 - ngx-markdown-editor
 - font-awesome
+- Angular Material
 
 ----
 
