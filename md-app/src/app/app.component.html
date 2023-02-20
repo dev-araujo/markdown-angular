@@ -1,5 +1,5 @@
 <div class="editor" [formGroup]="form">
-  <options (downloadText)="download($event,'download','markdown.png')" (delete)="delete($event)" [clipboard]="form.controls['content'].value">
+  <options  (delete)="delete($event)" [textContent]="form.controls['content'].value">
   </options>
   <textarea class="editor__md" formControlName="content"></textarea>
   <markdown-viewer id="download" class="editor__view" [viewer]="form.controls['content'].value"></markdown-viewer>

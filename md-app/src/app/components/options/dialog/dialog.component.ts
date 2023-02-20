@@ -7,19 +7,22 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./dialog.component.scss'],
 })
 export class DialogComponent {
+  messageContent = 'Você deseja realmente excluir o contéudo?'
+  messageNoContent = 'Não há contéudo para ser excluído'
+
+
   constructor(
     public dialogRef: MatDialogRef<DialogComponent>,
-    @Inject(MAT_DIALOG_DATA) private data: any
+    @Inject(MAT_DIALOG_DATA) public data: any
   ) {}
 
   ngOnInit() {
-    console.log(this.data);
   }
 
   onNoClick(): void {
     this.dialogRef.close();
   }
   deleteContent(): void {
-    this.dialogRef.close('oi');
+    this.dialogRef.close(true);
   }
 }
